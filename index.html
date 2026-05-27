@@ -3,462 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Physics Learning Hub</title>
+    <title>Physics Revision Hub</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar">
-        <h1 class="logo">⚛️ Physics Learning Hub</h1>
-        <ul class="nav-links">
-            <li><a href="#home" onclick="showSection('home')">Home</a></li>
-            <li><a href="#concepts" onclick="showSection('concepts')">Learn</a></li>
-            <li><a href="#calculator" onclick="showSection('calculator')">Calculator</a></li>
-            <li><a href="#simulator" onclick="showSection('simulator')">Simulator</a></li>
-            <li><a href="#converter" onclick="showSection('converter')">Converter</a></li>
-            <li><a href="#quiz" onclick="showSection('quiz')">Quiz</a></li>
-        </ul>
+        <div class="nav-container">
+            <div class="logo">Physics Revision</div>
+            <ul class="nav-menu">
+                <li><a href="#home" onclick="navigateTo('home')">Home</a></li>
+                <li><a href="#topics" onclick="navigateTo('topics')">Topics</a></li>
+                <li><a href="#revision" onclick="navigateTo('revision')">Revision</a></li>
+                <li><a href="#tools" onclick="navigateTo('tools')">Tools</a></li>
+            </ul>
+        </div>
     </nav>
 
     <!-- HOME SECTION -->
     <section id="home" class="section active">
+        <div class="hero-banner">
+            <h1>Physics Revision Hub</h1>
+            <p>Master physics through interactive revision materials, calculators, and simulations</p>
+            <button class="cta-btn" onclick="navigateTo('topics')">Explore Topics</button>
+        </div>
+        
         <div class="container">
-            <div class="hero">
-                <h1>Welcome to Physics Learning Hub</h1>
-                <p>Master physics concepts with interactive tools, simulations, and quizzes</p>
-                <button onclick="showSection('concepts')" class="btn btn-primary">Start Learning</button>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>📚 Learn Concepts</h3>
-                    <p>Understand fundamental physics topics with explanations and formulas</p>
+            <div class="features">
+                <div class="feature-box">
+                    <h3>📚 Structured Topics</h3>
+                    <p>Organized by curriculum areas with key concepts and formulas</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-box">
                     <h3>🧮 Calculators</h3>
-                    <p>Solve physics problems with interactive calculators</p>
+                    <p>Quick calculation tools for common physics problems</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-box">
                     <h3>🎮 Simulations</h3>
-                    <p>Visualize physics in action with interactive animations</p>
+                    <p>Interactive visualizations of physics concepts</p>
                 </div>
-                <div class="feature-card">
-                    <h3>🔄 Unit Converter</h3>
-                    <p>Convert between different units of measurement</p>
-                </div>
-                <div class="feature-card">
-                    <h3>📝 Quiz</h3>
-                    <p>Test your knowledge with our physics quiz</p>
-                </div>
-                <div class="feature-card">
-                    <h3>⚡ Fast & Free</h3>
-                    <p>No sign-up required, fully offline and accessible</p>
+                <div class="feature-box">
+                    <h3>📝 Flashcards</h3>
+                    <p>Key definitions and formulas at a glance</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONCEPTS SECTION -->
-    <section id="concepts" class="section">
+    <!-- TOPICS SECTION -->
+    <section id="topics" class="section">
         <div class="container">
-            <h2>Physics Concepts</h2>
-            <div class="concepts-grid">
-                <div class="concept-card">
-                    <h3>🚀 Kinematics</h3>
-                    <p><strong>Formula:</strong> v = u + at</p>
-                    <p><strong>Definition:</strong> Study of motion without considering forces.</p>
-                    <p><strong>Key Variables:</strong></p>
-                    <ul>
-                        <li>v = final velocity</li>
-                        <li>u = initial velocity</li>
-                        <li>a = acceleration</li>
-                        <li>t = time</li>
-                    </ul>
+            <h2>Physics Topics</h2>
+            <div class="topics-grid">
+                <div class="topic-card" onclick="openTopic('mechanics')">
+                    <h3>Mechanics</h3>
+                    <p>Forces, motion, energy, and momentum</p>
+                    <span class="arrow">→</span>
                 </div>
+                <div class="topic-card" onclick="openTopic('waves')">
+                    <h3>Waves & Sound</h3>
+                    <p>Wave properties, light, and sound</p>
+                    <span class="arrow">→</span>
+                </div>
+                <div class="topic-card" onclick="openTopic('electricity')">
+                    <h3>Electricity & Magnetism</h3>
+                    <p>Circuits, fields, and electromagnetic induction</p>
+                    <span class="arrow">→</span>
+                </div>
+                <div class="topic-card" onclick="openTopic('thermodynamics')">
+                    <h3>Thermodynamics</h3>
+                    <p>Heat, temperature, and energy transfer</p>
+                    <span class="arrow">→</span>
+                </div>
+                <div class="topic-card" onclick="openTopic('modern')">
+                    <h3>Modern Physics</h3>
+                    <p>Quantum, nuclear, and relativity concepts</p>
+                    <span class="arrow">→</span>
+                </div>
+                <div class="topic-card" onclick="openTopic('astrophysics')">
+                    <h3>Astrophysics</h3>
+                    <p>Stars, galaxies, and universe</p>
+                    <span class="arrow">→</span>
+                </div>
+            </div>
 
-                <div class="concept-card">
-                    <h3>⚙️ Newton's Laws</h3>
-                    <p><strong>Formula:</strong> F = ma</p>
-                    <p><strong>Definition:</strong> Relationship between force, mass, and acceleration.</p>
-                    <p><strong>Key Variables:</strong></p>
-                    <ul>
-                        <li>F = force (Newtons)</li>
-                        <li>m = mass (kg)</li>
-                        <li>a = acceleration (m/s²)</li>
-                    </ul>
-                </div>
-
-                <div class="concept-card">
-                    <h3>⚡ Work & Energy</h3>
-                    <p><strong>Formula:</strong> W = F × d × cos(θ)</p>
-                    <p><strong>Definition:</strong> Energy transfer through force and displacement.</p>
-                    <p><strong>Key Variables:</strong></p>
-                    <ul>
-                        <li>W = work (Joules)</li>
-                        <li>F = force</li>
-                        <li>d = displacement</li>
-                    </ul>
-                </div>
-
-                <div class="concept-card">
-                    <h3>🌍 Gravity</h3>
-                    <p><strong>Formula:</strong> F = G(m₁m₂)/r²</p>
-                    <p><strong>Definition:</strong> Attractive force between massive objects.</p>
-                    <p><strong>Key Variables:</strong></p>
-                    <ul>
-                        <li>G = gravitational constant</li>
-                        <li>m = masses</li>
-                        <li>r = distance</li>
-                    </ul>
-                </div>
-
-                <div class="concept-card">
-                    <h3>🔊 Waves & Sound</h3>
-                    <p><strong>Formula:</strong> v = f × λ</p>
-                    <p><strong>Definition:</strong> Propagation of disturbances through a medium.</p>
-                    <p><strong>Key Variables:</strong></p>
-                    <ul>
-                        <li>v = velocity</li>
-                        <li>f = frequency</li>
-                        <li>λ = wavelength</li>
-                    </ul>
-                </div>
-
-                <div class="concept-card">
-                    <h3>🌡️ Thermodynamics</h3>
-                    <p><strong>Formula:</strong> Q = mcΔT</p>
-                    <p><strong>Definition:</strong> Study of heat and temperature.</p>
-                    <p><strong>Key Variables:</strong></p>
-                    <ul>
-                        <li>Q = heat energy</li>
-                        <li>m = mass</li>
-                        <li>c = specific heat capacity</li>
-                        <li>ΔT = temperature change</li>
-                    </ul>
-                </div>
+            <!-- Topic Detail -->
+            <div id="topic-detail" class="topic-detail" style="display:none;">
+                <button class="back-btn" onclick="closeTopic()">← Back</button>
+                <div id="topic-content"></div>
             </div>
         </div>
     </section>
 
-    <!-- CALCULATOR SECTION -->
-    <section id="calculator" class="section">
+    <!-- REVISION SECTION -->
+    <section id="revision" class="section">
         <div class="container">
-            <h2>Physics Calculators</h2>
-            <div class="calculator-tabs">
-                <button class="calc-tab active" onclick="switchCalculator('velocity')">Velocity</button>
-                <button class="calc-tab" onclick="switchCalculator('force')">Force</button>
-                <button class="calc-tab" onclick="switchCalculator('work')">Work</button>
-                <button class="calc-tab" onclick="switchCalculator('kinetic')">Kinetic Energy</button>
-                <button class="calc-tab" onclick="switchCalculator('gravity')">Gravity</button>
-                <button class="calc-tab" onclick="switchCalculator('heat')">Heat</button>
-            </div>
-
-            <!-- Velocity Calculator -->
-            <div id="velocity" class="calculator-content active">
-                <h3>Velocity Calculator (v = u + at)</h3>
-                <div class="input-group">
-                    <label>Initial Velocity (m/s):</label>
-                    <input type="number" id="vel-u" placeholder="0">
-                </div>
-                <div class="input-group">
-                    <label>Acceleration (m/s²):</label>
-                    <input type="number" id="vel-a" placeholder="0">
-                </div>
-                <div class="input-group">
-                    <label>Time (s):</label>
-                    <input type="number" id="vel-t" placeholder="0">
-                </div>
-                <button class="btn" onclick="calculateVelocity()">Calculate</button>
-                <div id="vel-result" class="result"></div>
-            </div>
-
-            <!-- Force Calculator -->
-            <div id="force" class="calculator-content">
-                <h3>Force Calculator (F = ma)</h3>
-                <div class="input-group">
-                    <label>Mass (kg):</label>
-                    <input type="number" id="force-m" placeholder="0">
-                </div>
-                <div class="input-group">
-                    <label>Acceleration (m/s²):</label>
-                    <input type="number" id="force-a" placeholder="0">
-                </div>
-                <button class="btn" onclick="calculateForce()">Calculate</button>
-                <div id="force-result" class="result"></div>
-            </div>
-
-            <!-- Work Calculator -->
-            <div id="work" class="calculator-content">
-                <h3>Work Calculator (W = F × d)</h3>
-                <div class="input-group">
-                    <label>Force (N):</label>
-                    <input type="number" id="work-f" placeholder="0">
-                </div>
-                <div class="input-group">
-                    <label>Distance (m):</label>
-                    <input type="number" id="work-d" placeholder="0">
-                </div>
-                <button class="btn" onclick="calculateWork()">Calculate</button>
-                <div id="work-result" class="result"></div>
-            </div>
-
-            <!-- Kinetic Energy Calculator -->
-            <div id="kinetic" class="calculator-content">
-                <h3>Kinetic Energy Calculator (KE = ½mv²)</h3>
-                <div class="input-group">
-                    <label>Mass (kg):</label>
-                    <input type="number" id="ke-m" placeholder="0">
-                </div>
-                <div class="input-group">
-                    <label>Velocity (m/s):</label>
-                    <input type="number" id="ke-v" placeholder="0">
-                </div>
-                <button class="btn" onclick="calculateKineticEnergy()">Calculate</button>
-                <div id="ke-result" class="result"></div>
-            </div>
-
-            <!-- Gravity Calculator -->
-            <div id="gravity" class="calculator-content">
-                <h3>Weight Calculator (W = mg)</h3>
-                <div class="input-group">
-                    <label>Mass (kg):</label>
-                    <input type="number" id="grav-m" placeholder="0">
-                </div>
-                <div class="input-group">
-                    <label>Gravity (m/s², default 9.8):</label>
-                    <input type="number" id="grav-g" placeholder="9.8" value="9.8">
-                </div>
-                <button class="btn" onclick="calculateWeight()">Calculate</button>
-                <div id="grav-result" class="result"></div>
-            </div>
-
-            <!-- Heat Calculator -->
-            <div id="heat" class="calculator-content">
-                <h3>Heat Calculator (Q = mcΔT)</h3>
-                <div class="input-group">
-                    <label>Mass (kg):</label>
-                    <input type="number" id="heat-m" placeholder="0">
-                </div>
-                <div class="input-group">
-                    <label>Specific Heat Capacity (J/kg·K):</label>
-                    <input type="number" id="heat-c" placeholder="4186">
-                </div>
-                <div class="input-group">
-                    <label>Temperature Change (K):</label>
-                    <input type="number" id="heat-t" placeholder="0">
-                </div>
-                <button class="btn" onclick="calculateHeat()">Calculate</button>
-                <div id="heat-result" class="result"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SIMULATOR SECTION -->
-    <section id="simulator" class="section">
-        <div class="container">
-            <h2>Interactive Simulations</h2>
-            <div class="simulator-tabs">
-                <button class="sim-tab active" onclick="switchSimulator('projectile')">Projectile Motion</button>
-                <button class="sim-tab" onclick="switchSimulator('pendulum')">Pendulum</button>
-                <button class="sim-tab" onclick="switchSimulator('freefall')">Free Fall</button>
-            </div>
-
-            <!-- Projectile Motion -->
-            <div id="projectile" class="simulator-content active">
-                <h3>Projectile Motion Simulator</h3>
-                <div class="input-group">
-                    <label>Launch Angle (degrees, 0-90):</label>
-                    <input type="range" id="proj-angle" min="0" max="90" value="45" oninput="updateProjectile()">
-                    <span id="angle-display">45°</span>
-                </div>
-                <div class="input-group">
-                    <label>Initial Velocity (m/s, 5-50):</label>
-                    <input type="range" id="proj-velocity" min="5" max="50" value="25" oninput="updateProjectile()">
-                    <span id="velocity-display">25 m/s</span>
-                </div>
-                <canvas id="projectile-canvas" width="600" height="400"></canvas>
-                <div id="projectile-stats"></div>
-            </div>
-
-            <!-- Pendulum -->
-            <div id="pendulum" class="simulator-content">
-                <h3>Pendulum Oscillation</h3>
-                <div class="input-group">
-                    <label>Initial Angle (degrees, 5-60):</label>
-                    <input type="range" id="pend-angle" min="5" max="60" value="30" oninput="updatePendulum()">
-                    <span id="pend-angle-display">30°</span>
-                </div>
-                <canvas id="pendulum-canvas" width="600" height="400"></canvas>
-                <button class="btn" onclick="startPendulum()">Start</button>
-                <button class="btn" onclick="stopPendulum()">Stop</button>
-            </div>
-
-            <!-- Free Fall -->
-            <div id="freefall" class="simulator-content">
-                <h3>Free Fall Simulation</h3>
-                <div class="input-group">
-                    <label>Drop Height (m, 10-1000):</label>
-                    <input type="range" id="ff-height" min="10" max="1000" value="100" oninput="updateFreeFall()">
-                    <span id="ff-height-display">100 m</span>
-                </div>
-                <canvas id="freefall-canvas" width="600" height="400"></canvas>
-                <button class="btn" onclick="startFreeFall()">Drop</button>
-                <div id="freefall-stats"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONVERTER SECTION -->
-    <section id="converter" class="section">
-        <div class="container">
-            <h2>Unit Converter</h2>
-            <div class="converter-grid">
-                <!-- Length Converter -->
-                <div class="converter-card">
-                    <h3>Length</h3>
-                    <div class="input-group">
-                        <input type="number" id="length-value" placeholder="Enter value" oninput="convertLength()">
+            <h2>Quick Revision</h2>
+            <div class="revision-container">
+                <div class="flashcard-section">
+                    <h3>Key Formulas & Definitions</h3>
+                    <div id="flashcard" class="flashcard">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">
+                                <p>Click to reveal</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="converter-selects">
+                    <div class="flashcard-controls">
+                        <button class="btn" onclick="previousFlashcard()">← Previous</button>
+                        <span id="flashcard-counter">1 / 20</span>
+                        <button class="btn" onclick="nextFlashcard()">Next →</button>
+                    </div>
+                </div>
+
+                <div class="notes-section">
+                    <h3>Study Notes</h3>
+                    <textarea id="notes" placeholder=\"Add your study notes here...\"></textarea>
+                    <button class="btn" onclick="saveNotes()\">Save Notes</button>
+                    <div id="notes-list\" class=\"notes-list\"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TOOLS SECTION -->
+    <section id="tools" class="section">
+        <div class="container">
+            <h2>Physics Tools</h2>
+            
+            <div class="tools-menu">
+                <button class="tool-btn active" onclick="switchTool('calculator')\">Calculator</button>
+                <button class="tool-btn" onclick="switchTool('simulator')\">Simulator</button>
+                <button class="tool-btn" onclick="switchTool('converter')\">Unit Converter</button>
+            </div>
+
+            <!-- Calculator Tool -->
+            <div id="calculator" class="tool-content active">
+                <h3>Physics Calculator</h3>
+                <div class="calc-tabs">
+                    <button class="calc-tab active" onclick="switchCalc('velocity')\">Velocity</button>
+                    <button class="calc-tab" onclick="switchCalc('force')\">Force</button>
+                    <button class="calc-tab" onclick="switchCalc('work')\">Work</button>
+                    <button class="calc-tab" onclick="switchCalc('energy')\">Energy</button>
+                </div>
+
+                <div id="velocity" class="calc-item active">
+                    <p><strong>v = u + at</strong></p>
+                    <input type="number" id="vel-u" placeholder="Initial velocity (m/s)">
+                    <input type="number" id="vel-a" placeholder="Acceleration (m/s²)">
+                    <input type="number" id="vel-t" placeholder="Time (s)">
+                    <button class="btn" onclick="calcVelocity()">Calculate</button>
+                    <div id="vel-result" class="result"></div>
+                </div>
+
+                <div id="force" class="calc-item">
+                    <p><strong>F = ma</strong></p>
+                    <input type="number" id="force-m" placeholder="Mass (kg)">
+                    <input type="number" id="force-a" placeholder="Acceleration (m/s²)">
+                    <button class="btn" onclick="calcForce()">Calculate</button>
+                    <div id="force-result" class="result"></div>
+                </div>
+
+                <div id="work" class="calc-item">
+                    <p><strong>W = F × d</strong></p>
+                    <input type="number" id="work-f" placeholder="Force (N)">
+                    <input type="number" id="work-d" placeholder="Distance (m)">
+                    <button class="btn" onclick="calcWork()">Calculate</button>
+                    <div id="work-result" class="result"></div>
+                </div>
+
+                <div id="energy" class="calc-item">
+                    <p><strong>KE = ½mv²</strong></p>
+                    <input type="number" id="ke-m" placeholder="Mass (kg)">
+                    <input type="number" id="ke-v" placeholder="Velocity (m/s)">
+                    <button class="btn" onclick="calcKE()">Calculate</button>
+                    <div id="ke-result" class="result"></div>
+                </div>
+            </div>
+
+            <!-- Simulator Tool -->
+            <div id="simulator" class="tool-content">
+                <h3>Interactive Simulations</h3>
+                <div class="sim-tabs">
+                    <button class="sim-tab active" onclick="switchSim('projectile')\">Projectile Motion</button>
+                    <button class="sim-tab" onclick="switchSim('pendulum')\">Pendulum</button>
+                </div>
+
+                <div id="projectile" class="sim-item active">
+                    <div class="sim-controls">
+                        <label>Angle: <input type="range" id="proj-angle" min="0" max="90" value="45" oninput="updateProjectile()"> <span id="angle-val">45°</span></label>
+                        <label>Velocity: <input type="range" id="proj-vel" min="5" max="50" value="25" oninput="updateProjectile()"> <span id="vel-val">25 m/s</span></label>
+                    </div>
+                    <canvas id="projectile-canvas" width="600" height="350\"></canvas>
+                </div>
+
+                <div id="pendulum" class="sim-item">
+                    <div class="sim-controls">
+                        <label>Angle: <input type="range" id="pend-angle" min="5" max="60" value="30" oninput="updatePendulum()"> <span id="pend-angle-val">30°</span></label>
+                    </div>
+                    <canvas id="pendulum-canvas" width="600" height="350\"></canvas>
+                    <button class="btn" onclick="startPendulum()">Start</button>
+                    <button class="btn" onclick="stopPendulum()">Stop</button>
+                </div>
+            </div>
+
+            <!-- Unit Converter -->
+            <div id="converter" class="tool-content">
+                <h3>Unit Converter</h3>
+                <div class="converter-grid">
+                    <div class="converter-box">
+                        <h4>Length</h4>
+                        <input type="number" id="length-val" placeholder="Value" oninput="convertLength()">
                         <select id="length-from" onchange="convertLength()">
-                            <option value="m">Meters (m)</option>
-                            <option value="km">Kilometers (km)</option>
-                            <option value="cm">Centimeters (cm)</option>
-                            <option value="mm">Millimeters (mm)</option>
-                            <option value="ft">Feet (ft)</option>
+                            <option>m</option><option>km</option><option>cm</option><option>mm</option>
                         </select>
                         <span> to </span>
                         <select id="length-to" onchange="convertLength()">
-                            <option value="m">Meters (m)</option>
-                            <option value="km">Kilometers (km)</option>
-                            <option value="cm">Centimeters (cm)</option>
-                            <option value="mm">Millimeters (mm)</option>
-                            <option value="ft">Feet (ft)</option>
+                            <option>m</option><option selected>km</option><option>cm</option><option>mm</option>
                         </select>
+                        <div id="length-result" class="result"></div>
                     </div>
-                    <div id="length-result" class="result"></div>
-                </div>
 
-                <!-- Temperature Converter -->
-                <div class="converter-card">
-                    <h3>Temperature</h3>
-                    <div class="input-group">
-                        <input type="number" id="temp-value" placeholder="Enter value" oninput="convertTemperature()">
-                    </div>
-                    <div class="converter-selects">
-                        <select id="temp-from" onchange="convertTemperature()">
-                            <option value="C">Celsius (°C)</option>
-                            <option value="F">Fahrenheit (°F)</option>
-                            <option value="K">Kelvin (K)</option>
+                    <div class="converter-box">
+                        <h4>Temperature</h4>
+                        <input type="number" id="temp-val" placeholder="Value" oninput="convertTemp()">
+                        <select id="temp-from" onchange="convertTemp()">
+                            <option>°C</option><option>°F</option><option>K</option>
                         </select>
                         <span> to </span>
-                        <select id="temp-to" onchange="convertTemperature()">
-                            <option value="C">Celsius (°C)</option>
-                            <option value="F">Fahrenheit (°F)</option>
-                            <option value="K">Kelvin (K)</option>
+                        <select id="temp-to" onchange="convertTemp()">
+                            <option>°C</option><option selected>°F</option><option>K</option>
                         </select>
+                        <div id="temp-result" class="result"></div>
                     </div>
-                    <div id="temp-result" class="result"></div>
-                </div>
 
-                <!-- Speed Converter -->
-                <div class="converter-card">
-                    <h3>Speed</h3>
-                    <div class="input-group">
-                        <input type="number" id="speed-value" placeholder="Enter value" oninput="convertSpeed()">
-                    </div>
-                    <div class="converter-selects">
+                    <div class="converter-box">
+                        <h4>Speed</h4>
+                        <input type="number" id="speed-val" placeholder="Value" oninput="convertSpeed()">
                         <select id="speed-from" onchange="convertSpeed()">
-                            <option value="ms">m/s</option>
-                            <option value="kmh">km/h</option>
-                            <option value="mph">mph</option>
-                            <option value="knots">knots</option>
+                            <option>m/s</option><option>km/h</option><option>mph</option>
                         </select>
                         <span> to </span>
                         <select id="speed-to" onchange="convertSpeed()">
-                            <option value="ms">m/s</option>
-                            <option value="kmh">km/h</option>
-                            <option value="mph">mph</option>
-                            <option value="knots">knots</option>
+                            <option selected>m/s</option><option>km/h</option><option>mph</option>
                         </select>
+                        <div id="speed-result" class="result"></div>
                     </div>
-                    <div id="speed-result" class="result"></div>
-                </div>
-
-                <!-- Mass Converter -->
-                <div class="converter-card">
-                    <h3>Mass</h3>
-                    <div class="input-group">
-                        <input type="number" id="mass-value" placeholder="Enter value" oninput="convertMass()">
-                    </div>
-                    <div class="converter-selects">
-                        <select id="mass-from" onchange="convertMass()">
-                            <option value="kg">Kilograms (kg)</option>
-                            <option value="g">Grams (g)</option>
-                            <option value="lb">Pounds (lb)</option>
-                            <option value="ton">Metric Tons</option>
-                        </select>
-                        <span> to </span>
-                        <select id="mass-to" onchange="convertMass()">
-                            <option value="kg">Kilograms (kg)</option>
-                            <option value="g">Grams (g)</option>
-                            <option value="lb">Pounds (lb)</option>
-                            <option value="ton">Metric Tons</option>
-                        </select>
-                    </div>
-                    <div id="mass-result" class="result"></div>
-                </div>
-
-                <!-- Energy Converter -->
-                <div class="converter-card">
-                    <h3>Energy</h3>
-                    <div class="input-group">
-                        <input type="number" id="energy-value" placeholder="Enter value" oninput="convertEnergy()">
-                    </div>
-                    <div class="converter-selects">
-                        <select id="energy-from" onchange="convertEnergy()">
-                            <option value="J">Joules (J)</option>
-                            <option value="kJ">Kilojoules (kJ)</option>
-                            <option value="cal">Calories (cal)</option>
-                            <option value="kcal">Kilocalories (kcal)</option>
-                        </select>
-                        <span> to </span>
-                        <select id="energy-to" onchange="convertEnergy()">
-                            <option value="J">Joules (J)</option>
-                            <option value="kJ">Kilojoules (kJ)</option>
-                            <option value="cal">Calories (cal)</option>
-                            <option value="kcal">Kilocalories (kcal)</option>
-                        </select>
-                    </div>
-                    <div id="energy-result" class="result"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- QUIZ SECTION -->
-    <section id="quiz" class="section">
-        <div class="container">
-            <h2>Physics Quiz</h2>
-            <div id="quiz-container">
-                <div id="quiz-start" class="quiz-start">
-                    <p>Test your physics knowledge with 10 questions!</p>
-                    <button class="btn btn-primary" onclick="startQuiz()">Start Quiz</button>
-                </div>
-                <div id="quiz-content" style="display:none;">
-                    <div id="question-display"></div>
-                    <div id="options-display"></div>
-                    <button class="btn" onclick="nextQuestion()" style="margin-top:20px;">Next Question</button>
-                </div>
-                <div id="quiz-results" style="display:none;" class="quiz-results">
-                    <h3>Quiz Completed!</h3>
-                    <p id="score-display"></p>
-                    <button class="btn" onclick="restartQuiz()">Take Quiz Again</button>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Physics Learning Hub. All rights reserved.</p>
+        <p>&copy; 2024 Physics Revision Hub. All resources for educational purposes.</p>
     </footer>
 
     <script src="script.js"></script>
